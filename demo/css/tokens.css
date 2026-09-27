@@ -1,0 +1,91 @@
+/* ==========================================================================
+   DESIGN TOKENS — colours, type, spacing, motion.
+   Dark is the default theme; [data-theme="light"] overrides it.
+   ========================================================================== */
+
+:root {
+  --font-sans: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --container: 1240px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --nav-h: 72px;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.7, 0, 0.3, 1);
+
+  /* Code editor — stays dark in both themes */
+  --code-bg: #0a1122;
+  --code-bar: #0d1629;
+  --code-border: rgba(130, 170, 255, 0.14);
+  --code-text: #c8d3e6;
+  --code-muted: #45546f;
+  --syn-kw: #c792ea;
+  --syn-type: #ffcb6b;
+  --syn-prop: #82aaff;
+  --syn-str: #c3e88d;
+  --syn-punc: #89ddff;
+  --syn-com: #637394;
+
+  /* ---------- Dark theme (default) ---------- */
+  color-scheme: dark;
+  --bg: #050a16;
+  --bg-2: #0a1224;
+  --surface: rgba(148, 178, 255, 0.04);
+  --surface-2: rgba(148, 178, 255, 0.08);
+  --border: rgba(148, 178, 255, 0.12);
+  --border-strong: rgba(148, 178, 255, 0.24);
+  --text: #e7eef9;
+  --text-2: #a3b1c8;
+  --text-3: #74839c;
+  --accent: #22d3ee;
+  --accent-2: #3b82f6;
+  --accent-3: #a78bfa;
+  --ok: #34d399;
+  --on-accent: #03101f;
+  --grad: linear-gradient(120deg, #22d3ee 0%, #3b82f6 50%, #a78bfa 100%);
+  --nav-bg: rgba(5, 10, 22, 0.72);
+  --aurora-1: rgba(34, 211, 238, 0.16);
+  --aurora-2: rgba(59, 130, 246, 0.2);
+  --aurora-3: rgba(167, 139, 250, 0.15);
+  --grid-line: rgba(148, 178, 255, 0.055);
+  --particle: 148, 178, 255;
+  --particle-accent: 34, 211, 238;
+  --shadow-lg: 0 40px 100px -30px rgba(0, 0, 0, 0.75);
+  --glow: 0 18px 50px -12px rgba(34, 211, 238, 0.45);
+  --badge-bg: rgba(12, 21, 40, 0.92);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f7fc;
+  --bg-2: #ffffff;
+  --surface: rgba(15, 40, 90, 0.03);
+  --surface-2: rgba(15, 40, 90, 0.06);
+  --border: rgba(15, 40, 90, 0.1);
+  --border-strong: rgba(15, 40, 90, 0.2);
+  --text: #0b1830;
+  --text-2: #3f4d66;
+  --text-3: #5f6c83;
+  --accent: #0891b2;
+  --accent-2: #1d4ed8;
+  --accent-3: #7c3aed;
+  --ok: #059669;
+  --on-accent: #ffffff;
+  --grad: linear-gradient(120deg, #0891b2 0%, #1d4ed8 50%, #7c3aed 100%);
+  --nav-bg: rgba(244, 247, 252, 0.78);
+  --aurora-1: rgba(8, 145, 178, 0.13);
+  --aurora-2: rgba(29, 78, 216, 0.12);
+  --aurora-3: rgba(124, 58, 237, 0.1);
+  --grid-line: rgba(15, 40, 90, 0.06);
+  --particle: 40, 70, 130;
+  --particle-accent: 8, 145, 178;
+  --shadow-lg: 0 40px 90px -30px rgba(15, 40, 90, 0.35);
+  --glow: 0 18px 44px -14px rgba(29, 78, 216, 0.45);
+  --badge-bg: rgba(255, 255, 255, 0.95);
+}

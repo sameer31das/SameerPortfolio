@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sameer Kumar Das — AI Solutions Engineer &amp; Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Sameer Kumar Das: 12+ years building enterprise web apps with Angular, TypeScript and .NET, now AI-augmented with Claude, MCP and Spec-Driven Development."
+    />
+    <meta name="theme-color" content="#050a16" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <script>
+      /* Runs before first paint: theme, intro decision, animation failsafe. */
+      (function () {
+        var root = document.documentElement;
+        root.classList.add('js');
+        try {
+          var theme = localStorage.getItem('sd-theme');
+          if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme);
+        } catch (e) {}
+
+        var params = new URLSearchParams(location.search);
+        var seen = false;
+        try {
+          seen = sessionStorage.getItem('sd-intro-seen') === '1';
+        } catch (e) {}
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var skip = params.has('nointro') || reduce || (seen && !params.has('intro'));
+        root.classList.add(skip ? 'no-intro' : 'is-intro');
+
+        // If the scripts never start, show everything after 4s.
+        window.__sdFailsafe = setTimeout(function () {
+          root.classList.remove('is-intro');
+          root.classList.add('no-anim', 'no-intro');
+        }, 4000);
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ Boot intro ============ -->
+    <div class="intro" id="intro">
+      <div class="intro__terminal" aria-hidden="true">
+        <div class="intro__bar">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <p class="intro__title">~/sameer — zsh</p>
+        </div>
+        <div class="intro__body" id="intro-body"></div>
+        <div class="intro__progress"><span id="intro-progress"></span></div>
+      </div>
+      <button class="intro__skip" id="intro-skip" type="button">Skip intro ↵</button>
+    </div>
+
+    <!-- ============ Navigation ============ -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+    <header class="nav" id="nav" data-hero="nav">
+      <div class="container nav__inner">
+        <a class="nav__logo" href="#top" aria-label="Sameer Kumar Das, back to top">
+          <span class="nav__bracket">&lt;</span><span id="nav-initials">SD</span><span class="nav__bracket">/&gt;</span>
+        </a>
+
+        <nav class="nav__links" id="nav-links" aria-label="Sections"></nav>
+
+        <div class="nav__actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z" />
+            </svg>
+          </button>
+          <a class="btn btn--ghost btn--sm" id="nav-resume" href="assets/Sameer_Kumar_Das_Resume.pdf" download>Resume</a>
+          <button class="nav__burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============ Hero ============ -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero__aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="hero__grid" aria-hidden="true"></div>
+        <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <p class="pill" data-hero="pill">
+              <span class="pill__dot" aria-hidden="true"></span><span id="hero-status">Sr. Technical Specialist @ Synechron · Bengaluru</span>
+            </p>
+
+            <h1 class="hero__title" id="hero-title" data-hero="title">
+              <span class="hero__hello" data-hero-part="hello"><span class="tok-com">//</span> hello, I'm</span>
+              <span class="hero__name" id="hero-name">Sameer Kumar Das</span>
+            </h1>
+
+            <p class="hero__role" id="hero-role" data-hero="role">
+              <span aria-hidden="true"><span class="tok-kw">const</span> <span class="tok-var">role</span> <span class="tok-op">=</span> <span class="tok-str">"<span id="hero-typed">AI Solutions Engineer</span><span class="caret"></span>"</span><span class="tok-op">;</span></span>
+              <span class="sr-only" id="hero-roles-sr"></span>
+            </p>
+
+            <p class="hero__tagline" id="hero-tagline" data-hero="tagline"></p>
+
+            <div class="hero__cta" data-hero="cta">
+              <a class="btn btn--primary magnetic" id="hero-resume" href="assets/Sameer_Kumar_Das_Resume.pdf" download>
+                Download CV
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" />
+                </svg>
+              </a>
+              <a class="btn btn--ghost magnetic" id="hero-contact" href="mailto:sameer31.das@gmail.com">
+                Say hello
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5" />
+                </svg>
+              </a>
+            </div>
+
+            <ul class="hero__stats" id="hero-stats" data-hero="stats" role="list"></ul>
+          </div>
+
+          <div class="hero__visual" data-hero="visual" aria-hidden="true">
+            <div class="stage" id="hero-stage">
+              <div class="code-window">
+                <div class="code-window__bar">
+                  <div class="window-dots"><span></span><span></span><span></span></div>
+                  <div class="code-tabs">
+                    <span class="code-tab is-active"><span class="code-tab__icon">TS</span>sameer.ts</span>
+                    <span class="code-tab"><span class="code-tab__icon code-tab__icon--md">MD</span>career.log</span>
+                  </div>
+                </div>
+                <pre class="code-window__body"><code id="hero-code"></code></pre>
+                <div class="code-window__status">
+                  <span class="status__branch">⎇ main</span>
+                  <span>TypeScript</span>
+                  <span>UTF-8</span>
+                  <span class="status__check" id="code-status">● compiling…</span>
+                </div>
+              </div>
+              <!-- badges are injected here from data.js -->
+            </div>
+          </div>
+        </div>
+
+        <a class="scroll-cue" id="scroll-cue" href="#" hidden>
+          <span class="scroll-cue__mouse" aria-hidden="true"></span>
+          Scroll
+        </a>
+      </section>
+
+      <!-- ============ About ============ -->
+      <section class="section about" id="about" data-nav="About">
+        <div class="container">
+          <header data-section-head="about"></header>
+          <div class="about__grid">
+            <figure class="portrait" id="about-portrait" data-reveal></figure>
+            <div class="about__body">
+              <p class="about__summary" id="about-summary"></p>
+              <dl class="facts" id="about-facts" data-reveal></dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Career journey ============ -->
+      <section class="section journey" id="journey" data-nav="Journey">
+        <div class="container">
+          <header data-section-head="journey"></header>
+          <div class="timeline" id="timeline"></div>
+        </div>
+      </section>
+
+      <!-- ============ Skills ============ -->
+      <section class="section skills" id="skills" data-nav="Skills">
+        <div class="container">
+          <header data-section-head="skills"></header>
+        </div>
+        <div class="marquees" id="skills-marquee"></div>
+        <div class="container">
+          <ul class="skills-grid" id="skills-grid" role="list"></ul>
+        </div>
+      </section>
+
+      <!-- ============ AI-augmented development (pinned, horizontal on desktop) ============ -->
+      <section class="section ai-section" id="ai" data-nav="AI">
+        <div class="container">
+          <header data-section-head="ai"></header>
+        </div>
+        <div class="ai__track" id="ai-track"></div>
+        <div class="container">
+          <div class="ai__progress" aria-hidden="true"><span id="ai-progress"></span></div>
+        </div>
+      </section>
+
+      <!-- ============ Projects ============ -->
+      <section class="section projects" id="projects" data-nav="Projects">
+        <div class="container">
+          <header data-section-head="projects"></header>
+          <div class="filters" id="project-filters" role="group" aria-label="Filter projects by domain"></div>
+          <ul class="projects-grid" id="projects-grid" role="list"></ul>
+          <p class="sr-only" id="projects-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- ============ Certifications, education, recognition ============ -->
+      <section class="section credentials" id="credentials" data-nav="Credentials">
+        <div class="container">
+          <header data-section-head="credentials"></header>
+          <ul class="certs" id="certs" role="list"></ul>
+          <div class="creds__cols">
+            <div class="panel" data-reveal>
+              <h3 class="panel__title">Education</h3>
+              <ol class="edu" id="edu" role="list"></ol>
+            </div>
+            <div class="panel" data-reveal>
+              <h3 class="panel__title">Recognition</h3>
+              <ul class="wins" id="wins" role="list"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Contact ============ -->
+      <section class="section contact" id="contact" data-nav="Contact">
+        <div class="contact__bg" aria-hidden="true"><span></span><span></span></div>
+        <div class="container contact__inner">
+          <header data-section-head="contact"></header>
+          <div class="contact__mail" id="contact-mail" data-reveal></div>
+          <ul class="contact__links" id="contact-links" role="list" data-reveal></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="footer-year"></span> <span id="footer-name"></span></p>
+        <p class="mono">Built with HTML, CSS &amp; GSAP</p>
+        <a class="footer__top" href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script src="assets/vendor/gsap.min.js" defer></script>
+    <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/render.js" defer></script>
+    <script src="js/effects.js" defer></script>
+    <script src="js/particles.js" defer></script>
+    <script src="js/intro.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
